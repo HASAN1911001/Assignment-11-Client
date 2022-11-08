@@ -59,7 +59,7 @@ const Services = () => {
 
             <div className='flex m-20'>
                 <div className="card bg-base-100 shadow-xl m-4">
-                    <figure><img src="https://templatekits.themewarrior.com/cooked/wp-content/uploads/sites/17/2021/03/menu-3.jpg" alt="Shoes" /></figure>
+                    <figure><img src="https://templatekits.themewarrior.com/cooked/wp-content/uploads/sites/17/2021/03/menu-1.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
                             Non Profit
@@ -75,7 +75,7 @@ const Services = () => {
                 </div>
 
                 <div className="card bg-base-100 shadow-xl m-4">
-                    <figure><img src="https://templatekits.themewarrior.com/cooked/wp-content/uploads/sites/17/2021/03/menu-2.jpg" alt="Shoes" /></figure>
+                    <figure><img src="https://png.pngtree.com/png-clipart/20210328/original/pngtree-ramadan-iftar-png-png-image_6168918.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
                             Iftar Party
@@ -91,7 +91,7 @@ const Services = () => {
                 </div>
 
                 <div className="card bg-base-100 shadow-xl m-4">
-                    <figure><img src="https://templatekits.themewarrior.com/cooked/wp-content/uploads/sites/17/2021/03/menu-4.jpg" alt="Shoes" /></figure>
+                    <figure><img src="https://www.ohio.edu/sites/default/files/styles/max_650x650/public/2021-05/Feeding%20Guests%20%282%29.jpg?itok=urO4TSWA" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
                             Academic Event
