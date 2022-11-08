@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     return (
@@ -36,7 +37,7 @@ const Services = () => {
                 </div>
             </div>
             <div className='grid place-content-center mb-20'>
-                <button className="btn btn-wide btn-warning">CHOSE PAKAGE</button>
+                <Link to='/services' className="btn btn-wide btn-warning">See All</Link>
             </div>
         </div>
     );
