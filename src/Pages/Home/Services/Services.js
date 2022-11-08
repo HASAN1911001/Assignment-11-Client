@@ -15,6 +15,13 @@ const Services = () => {
                         <h2 className="card-title">
                             Weading Reception
                         </h2>
+                        <p>
+                            Best food service for all kind weading reception
+                        </p>
+                        <p>
+                            Price: Start from $999
+                        </p>
+                        <Link to='/services' className="btn btn-wide btn-warning">View Details</Link>
                     </div>
                 </div>
 
@@ -24,6 +31,13 @@ const Services = () => {
                         <h2 className="card-title">
                             Corporate Dinner
                         </h2>
+                        <p>
+                            Best food service for your corporate dinner
+                        </p>
+                        <p>
+                            Price: Start from $999
+                        </p>
+                        <Link to='/services' className="btn btn-wide btn-warning">View Details</Link>
                     </div>
                 </div>
 
@@ -33,6 +47,13 @@ const Services = () => {
                         <h2 className="card-title">
                             Social Events
                         </h2>
+                        <p>
+                            Best food service for your social events
+                        </p>
+                        <p>
+                            Price: Start from $999
+                        </p>
+                        <Link to='/services' className="btn btn-wide btn-warning">View Details</Link>
                     </div>
                 </div>
             </div>
