@@ -27,6 +27,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 <Link to='/login' className="btn btn-outline">Log In</Link>
+                <Link to='/blogs' className="btn btn-outline">Blogs</Link>
             </div>
         </div>
     );
