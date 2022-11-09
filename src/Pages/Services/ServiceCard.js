@@ -17,16 +17,12 @@ const ServiceCard = ({ service }) => {
             </PhotoProvider>
 
 
-            {/* <figure><img src={img} alt="Shoes" /></figure> */}
             <div className="card-body">
                 <h2 className="card-title font-bold text-3xl">{title}</h2>
                 <p className='text-2xl font-semibold'>{description}</p>
                 <p className='text-2xl text-orange-600 font-semibold'>Price: {price}</p>
                 <div className="card-actions justify-center">
                     <Link to={`/details/${_id}`} className="btn btn-wide btn-warning">View Details</Link>
-                    {/* <Link to={`/checkout/${_id}`}>
-                        <button className="btn btn-primary">Checkout</button>
-                    </Link> */}
                 </div>
             </div>
         </div>
