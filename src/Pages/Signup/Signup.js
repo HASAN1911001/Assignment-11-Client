@@ -8,7 +8,8 @@ const Signup = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        createUser(email, password)
+        const img = form.image.value;
+        createUser(email, password, img)
         .then(result =>{
             const user = result.user;
             console.log(user);
@@ -27,6 +28,12 @@ const Signup = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name='name' placeholder="your name" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Image</span>
+                            </label>
+                            <input type="text" name='image' placeholder="your image url" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
