@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Facility = ({facility}) => {
-    console.log(facility);
     return (
         <div>
             <div className="card w-96 bg-primary text-primary-content">

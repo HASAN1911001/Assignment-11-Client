@@ -20,7 +20,6 @@ const Reviews = () => {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.deletedCount > 0){
                     alert('deleted successfully');
                     const remaining = reviews.filter(odr => odr._id !== id);
@@ -40,7 +39,6 @@ const Reviews = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if(data.modifiedCount > 0) {
                 const remaining = reviews.filter(odr => odr._id !== id);
                 const approving = reviews.find(odr => odr._id === id);

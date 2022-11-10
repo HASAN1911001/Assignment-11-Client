@@ -17,9 +17,8 @@ const Login = () => {
         login(email, password)
         .then( result => {
             const user = result.user;
-            console.log(user);
         })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
     }
 
     //Login with Google
@@ -29,7 +28,6 @@ const Login = () => {
         providerLogin(googleProvider)
         .then(result =>{
             const user = result.user;
-            console.log(user);
         })
         .catch(err => console.error(err))
     }

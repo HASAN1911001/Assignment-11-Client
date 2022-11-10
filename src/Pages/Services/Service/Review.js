@@ -5,22 +5,19 @@ import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 const Review = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext);
+    const {displayName, email, photoURL} = user;
 
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
-        const name = `${form.firstName.value} ${form.lastName.value}`;
-        const email = user?.email || 'unregistered';
-        const phone = form.phone.value;
         const message = form.message.value;
-
         const review = {
             service: _id,
             serviceName: title,
             price,
-            customer: name,
+            customer: displayName,
             email,
-            phone,
+            photoURL,
             message
         }
 
@@ -45,18 +42,13 @@ const Review = () => {
     }
 
     return (
-        <div>
+        <div className='m-20'>
             <form onSubmit={handleReview}>
-                <h2 className="text-3xl">Give your feedback on {title}</h2>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                    <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />
-                    <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
-                    <input name="phone" type="text" placeholder="Your Phone" className="input input-ghost w-full  input-bordered" required />
-                    <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
+                <h2 className="text-3xl text-center m-10">Give your feedback on {title}</h2>
+                <textarea name="message" className="textarea textarea-bordered h-24 w-full p-10 m-10" placeholder="Your Message" required></textarea>
+                <div className='flex justify-center m-10'>
+                    <input className='btn-wide btn-warning' type="submit" value="Place Your Review" />
                 </div>
-                <textarea name="message" className="textarea textarea-bordered h-24 w-full" placeholder="Your Message" required></textarea>
-
-                <input className='btn-wide btn-warning' type="submit" value="Place Your Order" />
             </form>
         </div>
     );
