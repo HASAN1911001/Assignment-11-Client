@@ -10,10 +10,11 @@ import ReviewCard from './ReviewCard';
 
 const Details = () => {
     const { user } = useContext(AuthContext);
-    const { _id } = useLoaderData();
+    const { _id, title, price } = useLoaderData();
     const [facilities, setFacilities] = useState([]);
     const [service, setService] = useState([]);
     const [reviews, setReviews] = useState([])
+    const {displayName, email, photoURL} = user;
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?service=${_id}`)
@@ -31,6 +32,36 @@ const Details = () => {
             })
     }, []);
 
+    
+
+    const handleOrder = () => {
+        const review = {
+            service: _id,
+            serviceName: title,
+            price,
+            customer: displayName,
+            email,
+            photoURL,
+        }
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                //authorization: `Bearer ${localStorage.getItem('genius-token')}`
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged){
+                    alert('Order placed successfully')
+                    
+                }
+            })
+            .catch(er => console.error(er));
+    }
 
     return (
         <div>
@@ -40,7 +71,7 @@ const Details = () => {
                     <h2 className="card-title">{service.title}</h2>
                     <p>{service.description}</p>
                     <div className="card-actions justify-end">
-                        <Link to='/' className="btn btn-primary">Book Now</Link>
+                        <button onClick={handleOrder} className="btn btn-primary">Book Now</button>
                     </div>
                 </div>
             </div>
