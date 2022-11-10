@@ -7,7 +7,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://b6a11-service-review-server-side-hasan-1911001-hasan1911001.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user?.email])
@@ -15,7 +15,7 @@ const Reviews = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to cancel this review');
         if(proceed){
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://b6a11-service-review-server-side-hasan-1911001-hasan1911001.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -30,7 +30,7 @@ const Reviews = () => {
     }
 
     const handleStatusUpdate = id => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://b6a11-service-review-server-side-hasan-1911001-hasan1911001.vercel.app/reviews/${id}`, {
             method: 'PATCH', 
             headers: {
                 'content-type': 'application/json'

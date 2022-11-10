@@ -1,30 +1,32 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Context/Authprovider/Authprovider';
-import ReviewRow from '../../Reviews/ReviewRow';
-import ServiceCard from '../ServiceCard';
 import Facility from './Facility';
 import Review from './Review';
 import ReviewCard from './ReviewCard';
 
 
 const Details = () => {
+
     const { user } = useContext(AuthContext);
     const { _id, title, price } = useLoaderData();
     const [facilities, setFacilities] = useState([]);
     const [service, setService] = useState([]);
     const [reviews, setReviews] = useState([])
-    const {displayName, email, photoURL} = user;
+    
+    //const {displayName, email, photoURL} = user;
+
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service=${_id}`)
+        fetch(`https://b6a11-service-review-server-side-hasan-1911001-hasan1911001.vercel.app/reviews?service=${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [_id])
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${_id}`)
+        fetch(`https://b6a11-service-review-server-side-hasan-1911001-hasan1911001.vercel.app/services/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setFacilities(data.facility)
@@ -39,12 +41,12 @@ const Details = () => {
             service: _id,
             serviceName: title,
             price,
-            customer: displayName,
-            email,
-            photoURL,
+            customer: user?.displayName,
+            email: user?.email,
+            photoURL: user?.photoURL,
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://b6a11-service-review-server-side-hasan-1911001-hasan1911001.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
